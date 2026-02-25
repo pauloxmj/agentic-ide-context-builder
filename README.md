@@ -26,7 +26,7 @@ Read `RAC-SCHEMA.md` to understand the XML boundaries. The repository is structu
 ## Repository Structure
 
 ```
-agentic-architecture-builder/
+agentic-ide-context-builder/
 ├── README.md                 ← You are here
 ├── AGENTS.md                 ← Project-level context injector
 ├── RAC-SCHEMA.md             ← The strict XML parsing ruleset

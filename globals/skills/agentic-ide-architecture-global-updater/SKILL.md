@@ -9,10 +9,16 @@ This skill ensures that all changes to global AI agent context files strictly fo
 
 ## Context Prerequisites
 
-Start gathering context by reading the entrypoints to the knowledge base:
-- `/home/paulo/Repositories/agentic-architecture-builder/README.md`
-- `/home/paulo/Repositories/agentic-architecture-builder/AGENTS.md`
-- `/home/paulo/Repositories/agentic-architecture-builder/docs/ide-specific/03-github-copilot.md`
+Start gathering context by reading the entrypoints to the knowledge base. If you are in a different environment, resolve these paths relative to the current project root:
+- `[PROJECT_ROOT]/README.md`
+- `[PROJECT_ROOT]/AGENTS.md`
+- `[PROJECT_ROOT]/docs/ide-specific/03-github-copilot.md`
+
+## Environment Resolution
+Before executing any file operations, you MUST:
+1. Detect the current project root absolute path.
+2. Replace `[PROJECT_ROOT]` in all instructions with this path.
+3. Ensure you are working within the correct repository context (`agentic-ide-context-builder`).
 
 ## Multi-IDE Synchronization Constraint
 The user relies on multiple global agentic IDE configurations. Therefore, it requires full synchronization. Whenever you make a change, you MUST replicate it across all environments while adhering to their platform-specific paradigms.

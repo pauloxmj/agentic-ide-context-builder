@@ -9,10 +9,16 @@ This skill ensures that all changes to project-level AI agent context files (loc
 
 ## Context Prerequisites
 
-Start gathering context by reading the entrypoints to the knowledge base:
-- `/home/paulo/Repositories/agentic-architecture-builder/README.md`
-- `/home/paulo/Repositories/agentic-architecture-builder/AGENTS.md`
-- `/home/paulo/Repositories/agentic-architecture-builder/docs/ide-specific/03-github-copilot.md`
+Start gathering context by reading the entrypoints to the knowledge base. If you are in a different environment, resolve these paths relative to the current project root:
+- `[PROJECT_ROOT]/README.md`
+- `[PROJECT_ROOT]/AGENTS.md`
+- `[PROJECT_ROOT]/docs/ide-specific/03-github-copilot.md`
+
+## Environment Resolution
+Before executing any file operations, you MUST:
+1. Detect the current project root absolute path.
+2. Replace `[PROJECT_ROOT]` in all instructions with this path.
+3. Ensure you are working within the correct repository context (`agentic-ide-context-builder`).
 
 ## Targets
 This skill targets the following locations within the current project:
@@ -31,5 +37,5 @@ This skill targets the following locations within the current project:
 1. **Follow Project Patterns**: Ensure all updates align with existing architectural patterns found in the project's agent folder.
 2. **Always Include Frontmatter**: Ensure markdown files utilize the correct YAML frontmatter required by the open standard (e.g., `description` and `globs` for rules; `name` and `description` for skills).
 3. **Copilot Mirroring Logic**: When modifying `.agent/rules/*.md`, ensure you mirror relevant instructions into `.github/instructions/` using the `.instructions.md` suffix for path-specific Copilot context. Aggregate high-level rules into `.github/copilot-instructions.md`.
-4. **Sync with Global Guidelines**: While project-specific, ensure changes don't contradict the core agentic architecture principles defined in the `agentic-architecture-builder` repository.
+4. **Sync with Global Guidelines**: While project-specific, ensure changes don't contradict the core agentic architecture principles defined in the `agentic-ide-context-builder` repository.
 5. **Always Verify**: Verify your formatting and compliance before concluding the task.
