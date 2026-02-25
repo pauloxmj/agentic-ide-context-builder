@@ -11,14 +11,14 @@ This skill ensures that all changes to project-level AI agent context files (loc
 
 Before executing, identify the current IDE's global directory (e.g., `~/.gemini/antigravity`, `~/.kilocode`, `~/.copilot`). In these instructions, this is referred to as `[IDE_FOLDER]`.
 
-Start gathering context by reading the project's entrypoint and the global architectural knowledge base:
+Start gathering context by reading the project's entrypoint and the central knowledge base:
 - `[REPOSITORY]/AGENTS.md` (Project Entrypoint)
-- `[IDE_FOLDER]/README.md` (Global Architecture KB)
-- `[IDE_FOLDER]/AGENTS.md` (Global Rulebook)
+- `[GLOBAL_KB_REPO]/AGENTS.md` (Master Knowledge Base Entrypoint)
+- `[GLOBAL_KB_REPO]/README.md` (Global Architecture KB)
 
 ## Source of Truth
-- **Concepts**: Use `[IDE_FOLDER]/concepts/` for universal architectural patterns.
-- **Templates**: Use `[IDE_FOLDER]/templates/` for standard rule, workflow, and skill structures.
+- **Concepts**: Use `[GLOBAL_KB_REPO]/concepts/` for universal architectural patterns.
+- **Templates**: Use `[GLOBAL_KB_REPO]/templates/` for standard rule, workflow, and skill structures.
 - **Project Structure**: Respect the local project's existing `.agent/` or `.agents/` folder structure.
 
 ## Scope and RAC Integration

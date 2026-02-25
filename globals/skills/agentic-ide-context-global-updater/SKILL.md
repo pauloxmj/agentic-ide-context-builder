@@ -11,15 +11,15 @@ This skill ensures that all changes to global AI agent context files strictly fo
 
 Before executing, identify the current IDE's global directory (e.g., `~/.gemini/antigravity`, `~/.kilocode`, `~/.copilot`). In these instructions, this is referred to as `[IDE_FOLDER]`.
 
-Start gathering context by reading the entrypoints to the knowledge base within the `[IDE_FOLDER]`:
-- `[IDE_FOLDER]/README.md`
-- `[IDE_FOLDER]/AGENTS.md`
-- `[IDE_FOLDER]/ide-targets/` (Consult the file specific to the current IDE)
+Start gathering context by reading the central Knowledge Base entrypoints in the master repository (`[GLOBAL_KB_REPO]`):
+- `[GLOBAL_KB_REPO]/AGENTS.md` (Master Knowledge Base Entrypoint)
+- `[GLOBAL_KB_REPO]/README.md` (Global Architecture KB)
+- `[GLOBAL_KB_REPO]/ide-targets/` (Consult the file specific to the current IDE)
 
 ## Source of Truth
-- **Concepts**: Use `[IDE_FOLDER]/concepts/` for high-level architectural rules (Rules, Skills, Workflows).
-- **Templates**: Use `[IDE_FOLDER]/templates/` as the drafting source for all new files.
-- **IDE Quirks**: Consult `[IDE_FOLDER]/ide-targets/` to handle platform-specific formatting.
+- **Concepts**: Use `[GLOBAL_KB_REPO]/concepts/` for high-level architectural rules (Rules, Skills, Workflows).
+- **Templates**: Use `[GLOBAL_KB_REPO]/templates/` as the drafting source for all new files.
+- **IDE Quirks**: Consult `[GLOBAL_KB_REPO]/ide-targets/` to handle platform-specific formatting.
 
 ## Scope and RAC Integration
 - **Strict Scope**: This skill MUST only be used to update **user-level global configurations**.
