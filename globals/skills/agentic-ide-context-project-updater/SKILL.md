@@ -13,17 +13,17 @@ Before executing, identify the current IDE's global directory (e.g., `~/.gemini/
 
 Start gathering context by reading the project's entrypoint and the global architectural knowledge base:
 - `[REPOSITORY]/AGENTS.md` (Project Entrypoint)
-- `[REPOSITORY]/[IDE_FOLDER]/README.md` (Global Architecture KB)
-- `[REPOSITORY]/[IDE_FOLDER]/AGENTS.md` (Global Rulebook)
+- `[IDE_FOLDER]/README.md` (Global Architecture KB)
+- `[IDE_FOLDER]/AGENTS.md` (Global Rulebook)
 
 ## Source of Truth
-- **Concepts**: Use `[REPOSITORY]/[IDE_FOLDER]/concepts/` for universal architectural patterns.
-- **Templates**: Use `[REPOSITORY]/[IDE_FOLDER]/templates/` for standard rule, workflow, and skill structures.
+- **Concepts**: Use `[IDE_FOLDER]/concepts/` for universal architectural patterns.
+- **Templates**: Use `[IDE_FOLDER]/templates/` for standard rule, workflow, and skill structures.
 - **Project Structure**: Respect the local project's existing `.agent/` or `.agents/` folder structure.
 
 ## Scope and RAC Integration
-- **Strict Scope**: This skill MUST only be used to update **project-level configurations**. It should never touch global user directories.
-- **Project Context**: Ensure changes are tailored to the specific target project's tech stack and conventions defined in `/AGENTS.md`.
+- **Strict Scope**: This skill MUST only be used to update **project-level configurations** within the specific project repository the user is actively prompting you from. It should never touch global user directories or other projects on the system.
+- **Project Context**: Ensure changes are tailored to the specific target project's tech stack and conventions defined in `[REPOSITORY]/AGENTS.md`.
 
 ## Targets
 This skill targets the following locations within the current project root:
