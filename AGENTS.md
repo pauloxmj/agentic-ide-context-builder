@@ -1,39 +1,22 @@
 # AGENTS.md
 
 <system_context>
-Welcome to the Agentic Architecture Builder repository! 
-This project is a database and context provider designed to be fed to AI agents. By providing this repository as context alongside a target project's codebase, AI systems can use this knowledge—combined with the user's specific prompt instructions—to easily create, edit, and update IDE agentic structures to set up any target project.
+Welcome to the Agentic Architecture Builder RAC Database! 
+This project is a Retrieval-Augmented Context (RAC) database designed strictly for AI agents. 
+By providing this repository as context alongside a target project's codebase, AI systems can use this knowledge to accurately create, edit, and update IDE agentic structures.
 </system_context>
 
-## Repository Structure
-
-Our documentation is strictly divided to ensure maximum clarity and reusability for AI agents:
-
-1. **`docs/general/`**: Universal, IDE-agnostic architectures. This includes the Model Context Protocol (MCP), the Agent Skills standard, and abstract workflow routing strategies (e.g., the Orchestrator/Sub-Agent pattern).
-2. **`docs/ide-specific/`**: Concrete implementation details for the 5 major supported IDEs/platforms:
-   - Kilo Code
-   - Google Antigravity (Gemini)
-   - GitHub Copilot
-   - Cursor
-   - Claude Code
-3. **`templates/`**: Production-ready starter templates for rules, workflows, and skills. These templates are heavily optimized with XML tags and advanced orchestrator patterns.
-
-## Getting Started
+## RAC Parsing Instructions
 
 If you are an AI assistant entering this repository to assist a developer, **start by reading:**
-`docs/00-architecture-overview.md`
+`RAC-SCHEMA.md`
 
-This file provides the necessary reading sequence to understand the entire documentation suite without suffering from context pollution.
+This file defines the strict XML parsing boundaries (`<concept>`, `<ide_target>`, `<ide_quirk>`, `<template>`) required to extract semantic knowledge without hallucination or context pollution.
 
-## Documentation Standards
+## Repository RAC Structure
 
-When modifying or adding documentation to this repository, you must adhere to the following rules:
+Our knowledge base is mathematically divided for deterministic semantic extraction:
 
-1. **XML Tagging for Context**: Use explicit XML-like tags (e.g., `<system_context>`, `<instruction>`, `<example>`) to provide structural hints to other LLMs that will read these files in the future.
-2. **Abstract First**: Never put IDE-specific quirks (like Cursor's `.mdc` file format) into the `general/` section. Keep `general/` completely agnostic.
-3. **No Redundancy**: If a concept applies to multiple IDEs (like explicit `@` context injection), explain the theory in `general/03-rules-concepts.md` and only explain the *syntactical difference* in the specific IDE file.
-4. **Machine-Parseable Tables**: Heavily utilize Markdown tables when comparing scopes, directories, and paths for quick scanning by indexing engines.
-
-## Key Resources
-
-If you need to verify links or external references to open standards (like the MCP Github or the Agent Skills spec), immediately check `docs/01-resources-index.md`.
+1. **`concepts/`**: Universal, IDE-agnostic architectures wrapped in `<concept>` tags.
+2. **`ide-targets/`**: Concrete implementation details for major IDEs, utilizing `<ide_target>` and `<ide_quirk>` tags.
+3. **`templates/`**: Production-ready starter templates for rules, workflows, and skills bounded by `<template>` tags.

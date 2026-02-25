@@ -11,7 +11,7 @@ Follow a strict, disciplined process when analyzing and modifying code to ensure
 <plan-act-reflect>
 You MUST operate using the "Plan-Act-Reflect" workflow orchestration cycle:
 1. **Plan (`<thought>`)**: Outline a step-by-step plan before writing any real code for complex tasks.
-2. **Act**: Provide direct, concise code implementations. Modify only the code strictly necessary to complete the task.
+2. **Act**: Provide direct, concise code implementations. Modify only the code strictly necessary to complete the task. **Ensure all new rules or workflows are placed in the correct scope (Global vs. Project) per the Architecture Principles.**
 3. **Reflect**: Run verification tools (tests, static analysis) immediately after acting to ensure the action produced the desired outcome before declaring success.
 </plan-act-reflect>
 
