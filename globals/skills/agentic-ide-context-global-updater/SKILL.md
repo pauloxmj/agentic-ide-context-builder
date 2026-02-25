@@ -13,25 +13,34 @@ Before executing, identify the current IDE's global directory (e.g., `~/.gemini/
 
 Start gathering context by reading the central Knowledge Base entrypoints in the master repository (`[GLOBAL_KB_REPO]`):
 - `[GLOBAL_KB_REPO]/AGENTS.md` (Master Knowledge Base Entrypoint)
-- `[GLOBAL_KB_REPO]/README.md` (Global Architecture KB)
-- `[GLOBAL_KB_REPO]/ide-targets/` (Consult the file specific to the current IDE)
+- `[GLOBAL_KB_REPO]/README.md` (Global Architecture Overview)
+- `[GLOBAL_KB_REPO]/RAC-SCHEMA.md` (Strict XML parsing boundaries)
+- `[GLOBAL_KB_REPO]/ide-targets/` (Consult the file specific to the current IDE for platform-specific quirks)
 
 ## Source of Truth
+- **Schema Validation**: Parse `[GLOBAL_KB_REPO]/RAC-SCHEMA.md` to identify valid XML boundaries (`<concept>`, `<ide_target>`, `<ide_quirk>`, `<template>`).
 - **Concepts**: Use `[GLOBAL_KB_REPO]/concepts/` for high-level architectural rules (Rules, Skills, Workflows).
 - **Templates**: Use `[GLOBAL_KB_REPO]/templates/` as the drafting source for all new files.
-- **IDE Quirks**: Consult `[GLOBAL_KB_REPO]/ide-targets/` to handle platform-specific formatting.
+- **IDE Quirks**: Consult `[GLOBAL_KB_REPO]/ide-targets/` to handle platform-specific formatting and paths.
 
 ## Scope and RAC Integration
-- **Strict Scope**: This skill MUST only be used to update **user-level global configurations**.
+- **Strict Scope**: This skill MUST only be used to update **user-level global configurations**. It must never be used to update project-level files or configurations.
 - **Path Resolution**: Always resolve `[IDE_FOLDER]` to the actual folder used by the current IDE.
 
-## Multi-IDE Synchronization Constraint
-The user relies on multiple global agentic IDE configurations. Therefore, it requires full synchronization. Whenever you make a change, you MUST replicate it across all environments while adhering to their platform-specific paradigms.
-
-### Standard Targets
+## Targets
+This skill targets the following standard user-level directories on the system:
 - **Antigravity**: `~/.gemini/antigravity/`
 - **Kilo Code**: `~/.kilocode/`
 - **GitHub Copilot**: `~/.copilot/`
+
+Within these targets, you modify:
+- `rules/*.md` (Standard Rules)
+- `workflows/*.md` (Standard Workflows)
+- `skills/*/SKILL.md` (Standard & Copilot Skills)
+- `.copilot/copilot-instructions.md` (Copilot Aggregate Rules)
+
+## Multi-IDE Synchronization Constraint
+The user relies on multiple global agentic IDE configurations. Therefore, it requires full synchronization. Whenever you make a change to a rule, workflow, or skill, you MUST replicate it across all three environments while adhering to their platform-specific paradigms.
 
 ### Global Rule Consolidation (Copilot)
 GitHub Copilot uses a single `copilot-instructions.md` for global rules. When updating global rules, you must either concatenate them or provide a distilled summary including the latest changes into `~/.copilot/copilot-instructions.md`.

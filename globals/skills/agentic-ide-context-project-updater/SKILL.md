@@ -12,11 +12,14 @@ This skill ensures that all changes to project-level AI agent context files (loc
 Before executing, identify the current IDE's global directory (e.g., `~/.gemini/antigravity`, `~/.kilocode`, `~/.copilot`). In these instructions, this is referred to as `[IDE_FOLDER]`.
 
 Start gathering context by reading the project's entrypoint and the central knowledge base:
-- `[REPOSITORY]/AGENTS.md` (Project Entrypoint)
+- `[REPOSITORY]/AGENTS.md` (Project Entrypoint - Defines target project conventions)
 - `[GLOBAL_KB_REPO]/AGENTS.md` (Master Knowledge Base Entrypoint)
-- `[GLOBAL_KB_REPO]/README.md` (Global Architecture KB)
+- `[GLOBAL_KB_REPO]/README.md` (Global Architecture Overview)
+- `[GLOBAL_KB_REPO]/RAC-SCHEMA.md` (Strict XML parsing boundaries)
+- `[GLOBAL_KB_REPO]/ide-targets/` (Consult the file specific to the current IDE for platform-specific quirks)
 
 ## Source of Truth
+- **Schema Validation**: Parse `[GLOBAL_KB_REPO]/RAC-SCHEMA.md` for deterministic parsing of boundaries.
 - **Concepts**: Use `[GLOBAL_KB_REPO]/concepts/` for universal architectural patterns.
 - **Templates**: Use `[GLOBAL_KB_REPO]/templates/` for standard rule, workflow, and skill structures.
 - **Project Structure**: Respect the local project's existing `.agent/` or `.agents/` folder structure.
@@ -26,16 +29,17 @@ Start gathering context by reading the project's entrypoint and the central know
 - **Project Context**: Ensure changes are tailored to the specific target project's tech stack and conventions defined in `[REPOSITORY]/AGENTS.md`.
 
 ## Targets
-This skill targets the following locations within the current project root:
+This skill targets the following locations within the current project root only (`[REPOSITORY]`):
 - `.agent/`, `.agents/`, `_agent/`, or `_agents/`
 - `.github/` (Copilot Specific)
-- Specifically:
-  - `rules/*.md` (Standard Rules)
-  - `.github/copilot-instructions.md` (Copilot Aggregate)
-  - `.github/instructions/*.instructions.md` (Copilot Path-specific)
-  - `workflows/*.md` (Standard Workflows)
-  - `skills/*/SKILL.md` (Standard & Copilot Skills)
-  - `AGENTS.md` (Core Entrypoint)
+
+Specifically updating:
+- `rules/*.md` (Standard Rules)
+- `workflows/*.md` (Standard Workflows)
+- `skills/*/SKILL.md` (Standard & Copilot Skills)
+- `.github/copilot-instructions.md` (Copilot Aggregate)
+- `.github/instructions/*.instructions.md` (Copilot Path-specific)
+- `AGENTS.md` (Core Entrypoint)
 
 ## Core Execution Invariants
 1. **Follow Project Patterns**: Ensure all updates align with existing architectural patterns found in the project's agent folder.
@@ -46,4 +50,4 @@ This skill targets the following locations within the current project root:
 4. **Follow Constraints**:
    - **Rules**: Keep under 500 lines. Focus on project conventions.
    - **Skills**: Must be portable. Identifier must match directory name.
-5. **Always Verify**: Verify your formatting and compliance before concluding the task.
+5. **Always Verify**: Verify your formatting and compliance within the project before concluding the task.

@@ -19,5 +19,6 @@ Our knowledge base is mathematically divided for deterministic semantic extracti
 
 1. **`concepts/`**: Universal, IDE-agnostic architectures wrapped in `<concept>` tags.
 2. **`ide-targets/`**: Concrete implementation details for major IDEs, utilizing `<ide_target>` and `<ide_quirk>` tags.
-3. **`templates/`**: Production-ready starter templates for rules, workflows, and skills bounded by `<template>` tags.
 4. **`skills/`**: Core architectural skills that provide the logic for updating, refactoring, and synchronizing global and project-level agent configurations.
+5. **`globals/`**: Backup of the user's specific global IDE configurations (Antigravity, Kilo Code, Copilot).
+6. **`templates/`**: Production-ready starter templates for rules, workflows, and skills bounded by `<template>` tags.
