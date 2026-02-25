@@ -1,4 +1,4 @@
-# Agentic Architecture RAC Database
+# Agentic Context RAC Database
 
 > A **Retrieval-Augmented Context (RAC)** database and template kit for governing AI coding agents with **rules**, **workflows**, and **skills**.
 
