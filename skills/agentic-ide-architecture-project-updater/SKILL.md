@@ -14,6 +14,11 @@ Start gathering context by reading the entrypoints to the knowledge base. If you
 - `[PROJECT_ROOT]/AGENTS.md`
 - `[PROJECT_ROOT]/docs/ide-specific/03-github-copilot.md`
 
+## Scope and RAC Integration
+- **Strict Scope**: This skill MUST only be used to update **project-level configurations** (e.g., `.agent/`, `.agents/`, `_agent/`). It should never touch global user directories.
+- **Source of Truth**: All updates must be derived from the architectural principles in `[PROJECT_ROOT]/concepts/` and utilize the `[PROJECT_ROOT]/templates/` provided in this RAC database.
+- **Project Context**: Ensure the changes are tailored to the specific target project's tech stack while adhering to the core RAC patterns.
+
 ## Environment Resolution
 Before executing any file operations, you MUST:
 1. Detect the current project root absolute path.

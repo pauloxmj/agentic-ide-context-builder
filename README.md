@@ -26,7 +26,6 @@ Read `RAC-SCHEMA.md` to understand the XML boundaries. The repository is structu
 ## Repository Structure
 
 ```
-agentic-ide-context-builder/
 ├── README.md                 ← You are here
 ├── AGENTS.md                 ← Project-level context injector
 ├── RAC-SCHEMA.md             ← The strict XML parsing ruleset
@@ -35,8 +34,22 @@ agentic-ide-context-builder/
 ├── concepts/             ← High-level architectural knowledge
 ├── ide-targets/              ← IDE-specific configuration quirks
 ├── templates/                ← Scaffolding structures
+├── skills/                   ← Core architectural skills for agents
 └── globals/                  ← Backup of personal global configurations
 ```
+
+## Core Architectural Skills
+
+This KB is designed to be used in tandem with the following core skills found in the `skills/` directory:
+
+1. **`agentic-ide-architecture-global-updater`**: Handles user-level global configurations (e.g., `~/.gemini/antigravity`). Use this for changes that should persist across all your projects.
+2. **`agentic-ide-architecture-project-updater`**: Handles project-specific configurations (e.g., `.agent/`). Use this for rules and workflows tailored to a specific codebase.
+
+### How to Use Skills with this KB
+When an AI agent is tasked with updating context, it should:
+1. **Identify Scope**: Determine if the change is global or project-specific.
+2. **Consult KB**: Use `concepts/` and `templates/` as the source of truth for the change.
+3. **Execute Skill**: Use the corresponding Skill to apply the change following the standard architecture.
 
 ## How AI Agents Use This
 

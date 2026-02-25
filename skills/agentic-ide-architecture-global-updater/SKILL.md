@@ -14,6 +14,11 @@ Start gathering context by reading the entrypoints to the knowledge base. If you
 - `[PROJECT_ROOT]/AGENTS.md`
 - `[PROJECT_ROOT]/docs/ide-specific/03-github-copilot.md`
 
+## Scope and RAC Integration
+- **Strict Scope**: This skill MUST only be used to update **user-level global configurations** (~/.gemini/antigravity, ~/.kilocode, ~/.copilot).
+- **Source of Truth**: All updates must be derived from the architectural principles in `[PROJECT_ROOT]/concepts/` and utilize the `[PROJECT_ROOT]/templates/` provided in this RAC database.
+- **Environment Detection**: Always verify you are modifying the correct global directories for the current OS (Linux, macOS, etc.).
+
 ## Environment Resolution
 Before executing any file operations, you MUST:
 1. Detect the current project root absolute path.
