@@ -1,4 +1,3 @@
-<template scope="project" target="rule">
 ---
 description: [Short description of the project rule]
 globs: [Optional: target specific project files e.g., src/api/**/*.ts]
@@ -19,4 +18,3 @@ alwaysApply: [Optional: true/false for Cursor]
 <example>
 [Provide a brief good/bad example using the actual project's stack]
 </example>
-</template>

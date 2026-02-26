@@ -1,4 +1,3 @@
-<template scope="global" target="rule">
 ---
 description: [Short description of the global rule]
 globs: [Optional: file patterns this rule applies to, e.g., src/**/*.ts]
@@ -18,4 +17,3 @@ alwaysApply: [Optional: true/false for Cursor]
 <example>
 [Provide a brief good/bad example if applicable]
 </example>
-</template>

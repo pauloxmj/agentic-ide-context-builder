@@ -1,4 +1,3 @@
-<template scope="any" target="workflow">
 ---
 description: [Short action-oriented description, e.g., Deploy to Staging]
 author: [Optional]
@@ -17,4 +16,3 @@ version: 1.0.0
    - *Command*: `npm run something`
 2. **[Step 2 Title]**: [Next action]
 3. **[Verification Step]**: [How the agent proves the workflow succeeded]
-</template>
